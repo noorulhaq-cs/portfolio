@@ -26,7 +26,7 @@ export default function Skills() {
                     {group.title}
                   </h3>
                   <span className="font-mono text-[11px] text-ink-faint">
-                    {group.file}
+                    {(group as any).file}
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-2">

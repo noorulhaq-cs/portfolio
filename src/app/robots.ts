@@ -1,3 +1,4 @@
+export const dynamic = "force-static"; // <-- Yeh line add karni hai
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
