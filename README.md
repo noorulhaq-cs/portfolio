@@ -57,4 +57,5 @@ This is a standard Next.js app — deploy directly to [Vercel](https://vercel.co
 ```bash
 npm run build
 npm start
+
 ```
