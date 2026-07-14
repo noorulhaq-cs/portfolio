@@ -152,7 +152,7 @@ export default function Hero() {
 
             {/* Aapki Image */}
             <image
-              href="/dp.JPG" // Yahan apni image ka path dalein
+              href={`${process.env.__NEXT_ROUTER_BASEPATH || ''}/dp.JPG`}
               width="200"
               height="200"
               preserveAspectRatio="xMidYMid slice"
