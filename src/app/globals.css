@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --surface: #f6f6f8;
+  --surface-2: #eeeef1;
+  --border: #e3e3e8;
+  --ink: #0a0a0b;
+  --ink-muted: #63636c;
+  --ink-faint: #9a9aa3;
+  --accent: #3457d5;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(52, 87, 213, 0.08);
+  --accent-soft-2: rgba(52, 87, 213, 0.16);
+}
+
+.dark {
+  --bg: #0a0a0c;
+  --surface: #131316;
+  --surface-2: #1a1a1e;
+  --border: #232328;
+  --ink: #f2f2f4;
+  --ink-muted: #9b9ba3;
+  --ink-faint: #616167;
+  --accent: #6e8bf0;
+  --accent-ink: #0a0a0c;
+  --accent-soft: rgba(110, 139, 240, 0.1);
+  --accent-soft-2: rgba(110, 139, 240, 0.2);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+  background: var(--accent-soft-2);
+  color: var(--ink);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-faint);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+.eyebrow::before {
+  content: "// ";
+  color: var(--ink-faint);
+}
+
+.section-pad {
+  padding-top: clamp(4rem, 8vw, 7rem);
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.glass {
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
