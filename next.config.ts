@@ -5,6 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Simple URL ke liye ye do lines update karein:
+  basePath: '/portfolio', 
+  assetPrefix: '/portfolio',
 };
 
 export default nextConfig;
