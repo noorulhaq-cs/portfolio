@@ -91,7 +91,7 @@ export const projects: Project[] = [
       "Technical analysis labs & learning modules",
     ],
     github: "https://github.com/noorulhaq/stockmento",
-    demo: "https://stockmento.example.com",
+    // demo: "https://stockmento.example.com",
   },
   {
     slug: "ecommerce-platform",
@@ -112,34 +112,34 @@ export const projects: Project[] = [
   {
     slug: "exam-management-system",
     title: "Exam Management System",
-    tagline: "Student & admin exam workflow",
+    tagline: "Student & teacher exam workflow",
     image: "exam.png",
     tech: ["Java", "OOP"],
     description:
-      "A desktop exam management system with dedicated student and admin experiences for scheduling exams and tracking performance.",
+      "A desktop-based Exam Management System with dedicated interfaces for teachers and students. Teachers can create and schedule exams for specific dates, while students can take the exams on the scheduled dates and view their results and performance.",
     features: [
-      "Student portal",
-      "Admin dashboard",
-      "Exam scheduling",
-      "Performance tracking",
+      "Online Exam Attempt",
+      "Automatic Result Generation",
+      "Exam Creation",
+      "Teacher & Student Login",
     ],
-    github: "https://github.com/noorulhaq/exam-management-system",
+    github: "https://github.com/noorulhaq-cs/oopproject",
   },
   {
     slug: "car-showroom-management",
     title: "Car Showroom Management System",
-    tagline: "Inventory, billing & DSA in practice",
+    tagline: "Car showroom and rental management",
     image: "rentacar.png",
-    tech: ["Java", "DSA"],
+    tech: ["HTML", "CSS"],
     description:
-      "An inventory and billing system for a car showroom, built to practice core data structures with real file handling requirements.",
+      "A simple Car Showroom and Rent-a-Car website that allows users to browse available vehicles and explore car rental options through an easy-to-use interface",
     features: [
-      "Inventory management",
-      "Billing & discounts",
-      "File handling",
-      "Custom linked list implementation",
+      "Vehicle Listings",
+      "Rent-a-Car Service",
+      "Responsive User Interface",
+      "Car Details",
     ],
-    github: "https://github.com/noorulhaq/car-showroom-management",
+    github: "https://github.com/noorulhaq-cs/rentacar",
   },
 ];
 

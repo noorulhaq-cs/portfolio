@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Simple URL ke liye ye do lines update karein:
-  basePath: '/portfolio', 
+// 🟢 Local testing ke liye in do lines ko comment kar dein:
+  basePath: '/portfolio',
   assetPrefix: '/portfolio',
 };
 
