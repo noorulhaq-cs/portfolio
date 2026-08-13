@@ -110,20 +110,22 @@ export const projects: Project[] = [
     github: "https://github.com/noorulhaq-cs/Project_scd_Website_using_Laravel_and_php",
   },
   {
-    slug: "exam-management-system",
-    title: "Exam Management System",
-    tagline: "Student & teacher exam workflow",
-    image: "exam.png",
-    tech: ["Java", "OOP"],
+    slug: "shophub-ecommerce",
+    title: "ShopHub - E-Commerce Platform",
+    tagline: "Full-stack store with real-time database & auth",
+    image: "shophub.png",
+    tech: ["React", "Vite", "Supabase", "PostgreSQL", "JavaScript"],
     description:
-      "A desktop-based Exam Management System with dedicated interfaces for teachers and students. Teachers can create and schedule exams for specific dates, while students can take the exams on the scheduled dates and view their results and performance.",
+      "A full-stack, responsive e-commerce application featuring real-time PostgreSQL database integration, secure authentication with custom metadata, user-isolated persistent shopping carts, and dynamic checkout validation.",
     features: [
-      "Online Exam Attempt",
-      "Automatic Result Generation",
-      "Exam Creation",
-      "Teacher & Student Login",
+      "Supabase Auth with custom username metadata",
+      "User-isolated persistent cart stored in PostgreSQL",
+      "Dynamic product fetching & detail pages",
+      "Form validations & empty cart guards",
+      "Fully responsive UI with Vite & React Router",
     ],
-    github: "https://github.com/noorulhaq-cs/oopproject",
+    github: "https://github.com/noorulhaq-cs/ecommerce-react-website",
+    demo: "https://ecommerce-react-website-nine.vercel.app/",
   },
   {
     slug: "car-showroom-management",
@@ -140,6 +142,22 @@ export const projects: Project[] = [
       "Car Details",
     ],
     github: "https://github.com/noorulhaq-cs/rentacar",
+  },
+  {
+    slug: "exam-management-system",
+    title: "Exam Management System",
+    tagline: "Student & teacher exam workflow",
+    image: "exam.png",
+    tech: ["Java", "OOP"],
+    description:
+      "A desktop-based Exam Management System with dedicated interfaces for teachers and students. Teachers can create and schedule exams for specific dates, while students can take the exams on the scheduled dates and view their results and performance.",
+    features: [
+      "Online Exam Attempt",
+      "Automatic Result Generation",
+      "Exam Creation",
+      "Teacher & Student Login",
+    ],
+    github: "https://github.com/noorulhaq-cs/oopproject",
   },
 ];
 
