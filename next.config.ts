@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 // 🟢 Local testing ke liye in do lines ko comment kar dein:
-  // basePath: '/portfolio',
-  // assetPrefix: '/portfolio',
+  basePath: '/portfolio',
+  assetPrefix: '/portfolio',
 };
 
 export default nextConfig;
