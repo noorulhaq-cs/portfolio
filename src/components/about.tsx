@@ -14,25 +14,30 @@ export default function About() {
   return (
     <section id="about" className="section-pad">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <SectionHeading title="About me" />
+        <SectionHeading
+          title="About me"
+          description="A quick overview of my engineering philosophy, technical background, and what drives my development journey."
+        />
 
-        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 items-start">
+        <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 items-start">
           <Reveal delay={0.05}>
-            <p className="text-lg leading-relaxed text-ink">
-              I am a detail-oriented Computer Science graduate with some practical experience building responsive, scalable web applications and management systems. I have a strong foundation in modern full-stack development, leveraging reliable data structures and robust logic to solve real-world problems. For me, writing code is about creating solutions that are neat, modular, and easy to maintain.
+            <p className="text-base sm:text-lg leading-relaxed text-ink">
+              I am a detail-oriented Computer Science graduate with practical experience building responsive, scalable web applications and management systems. I have a strong foundation in modern full-stack development, leveraging reliable data structures and robust logic to solve real-world problems. For me, writing code is about creating solutions that are neat, modular, and easy to maintain.
             </p>
-            <p className="mt-5 text-ink-muted leading-relaxed">
-              Most of my project work revolves around integration—whether it's designing secure user authentication pipelines, managing databases like MySQL and PostgreSQL, or implementing real-time simulators. I am a quick learner who enjoys diving into both backend architecture and frontend interface polish, always keeping code reusability in mind.
+            <p className="mt-4 text-sm sm:text-base text-ink-muted leading-relaxed">
+              Most of my project work revolves around integration—whether it&apos;s designing secure user authentication pipelines, managing databases like MySQL and PostgreSQL, or implementing real-time simulators. I am a quick learner who enjoys diving into both backend architecture and frontend interface polish, always keeping code reusability in mind.
             </p>
 
-            <ul className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3">
+            <ul className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3.5">
               {aboutHighlights.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-2.5 text-sm text-ink-muted"
+                  className="flex items-start gap-2.5 text-xs sm:text-sm text-ink-muted leading-snug"
                 >
-                  <Check size={15} className="mt-0.5 shrink-0 text-accent" />
-                  {item}
+                  <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <Check size={11} strokeWidth={3} />
+                  </span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
@@ -42,16 +47,18 @@ export default function About() {
             {facts.map((fact) => (
               <div
                 key={fact.label}
-                className="flex items-center gap-4 rounded-2xl border border-border bg-surface p-5 hover:border-accent/40 transition-colors"
+                className="group flex items-center gap-4 rounded-2xl border border-border bg-surface p-5 hover:border-accent/40 hover:shadow-lg hover:shadow-black/[0.03] transition-all"
               >
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--accent-soft)] text-accent">
-                  <fact.icon size={18} />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-accent/10 border border-accent/20 text-accent group-hover:scale-105 transition-transform">
+                  <fact.icon size={20} />
                 </div>
                 <div>
-                  <p className="font-mono text-[11px] uppercase tracking-wide text-ink-faint">
+                  <p className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
                     {fact.label}
                   </p>
-                  <p className="font-medium text-ink">{fact.value}</p>
+                  <p className="font-display font-semibold text-ink sm:text-base mt-0.5">
+                    {fact.value}
+                  </p>
                 </div>
               </div>
             ))}
