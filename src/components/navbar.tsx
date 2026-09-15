@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Moon, Sun, Menu, X, Download } from "lucide-react";
 import { useTheme } from "./theme-provider";
 import { navLinks, profile } from "@/lib/data";
+import { getAssetPath } from "@/lib/assets";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -78,15 +79,10 @@ export default function Navbar() {
       checkActiveSection();
     }, 750);
 
-    const target = document.querySelector(href);
-    if (target) {
-      const navbarHeight = 64;
-      const top =
-        target.getBoundingClientRect().top + window.scrollY - navbarHeight;
-      window.scrollTo({
-        top,
-        behavior: "smooth",
-      });
+    const el = document.querySelector(href);
+    if (el) {
+      const y = el.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -110,7 +106,7 @@ export default function Navbar() {
           {profile.name}
         </a>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => {
             const isActive = active === link.href;
@@ -168,7 +164,7 @@ export default function Navbar() {
             {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
           </button>
           <a
-            href={profile.resumeUrl}
+            href={getAssetPath(profile.resumeUrl)}
             download
             className="ml-1 inline-flex items-center gap-2 rounded-full bg-ink text-bg px-4 py-2 text-sm font-medium hover:opacity-90 active:scale-95 transition-all shadow-sm"
           >
@@ -245,7 +241,7 @@ export default function Navbar() {
               {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
             </button>
             <a
-              href={profile.resumeUrl}
+              href={getAssetPath(profile.resumeUrl)}
               download
               className="ml-auto inline-flex items-center gap-2 rounded-full bg-ink text-bg px-4 py-2 text-sm font-medium"
             >

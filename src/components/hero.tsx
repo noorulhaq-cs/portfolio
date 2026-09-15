@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Mail, User } from "lucide-react";
 import { profile } from "@/lib/data";
+import { getAssetPath } from "@/lib/assets";
 
 const floatIcons = [
   { label: "TS", top: "6%", left: "6%", delay: 0 },
@@ -114,7 +115,7 @@ export default function Hero() {
               />
             </a>
             <a
-              href={profile.resumeUrl}
+              href={getAssetPath(profile.resumeUrl)}
               download
               className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-surface px-5 py-3 text-sm font-medium text-ink hover:border-accent/50 hover:bg-surface-2 active:scale-95 transition-all"
             >
@@ -147,7 +148,7 @@ export default function Hero() {
             <div className="h-full w-full rounded-full overflow-hidden bg-surface-2 flex items-center justify-center relative">
               {!imageError ? (
                 <img
-                  src="/dp.JPG"
+                  src={getAssetPath("/dp.jpg")}
                   alt={profile.name}
                   onLoad={() => setImageLoaded(true)}
                   onError={() => setImageError(true)}

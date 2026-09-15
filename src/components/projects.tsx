@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Github, ChevronDown, ChevronUp, Code2 } from "lucide-react";
 import { Reveal, SectionHeading } from "./reveal";
 import { projects } from "@/lib/data";
+import { getAssetPath } from "@/lib/assets";
 
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
@@ -42,7 +43,7 @@ export default function Projects() {
                   <div className="relative h-28 sm:h-52 w-full shrink-0 overflow-hidden border-b border-border bg-surface-2 flex items-center justify-center">
                     {project.image && !brokenImages[project.slug] ? (
                       <img
-                        src={project.image}
+                        src={getAssetPath(project.image)}
                         alt={`${project.title} screenshot`}
                         loading="lazy"
                         onError={() => handleImageError(project.slug)}

@@ -1,13 +1,18 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+const basePath = isProd ? "/portfolio" : "";
+
 const nextConfig: NextConfig = {
-  output: 'export',
+  output: "export",
+  basePath: basePath,
+  assetPrefix: basePath ? `${basePath}/` : undefined,
   images: {
     unoptimized: true,
   },
-// 🟢 Local testing ke liye in do lines ko comment kar dein:
-  basePath: '/portfolio',
-  assetPrefix: '/portfolio',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 export default nextConfig;

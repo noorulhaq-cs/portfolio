@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Reveal, SectionHeading } from "./reveal";
 import { certificates, type Certificate, type CertificateCategory } from "@/lib/data";
+import { getAssetPath } from "@/lib/assets";
 
 const CATEGORIES: CertificateCategory[] = [
   "All",
@@ -167,7 +168,7 @@ export default function Certificates() {
                   >
                     {!brokenImages[cert.id] ? (
                       <img
-                        src={cert.image}
+                        src={getAssetPath(cert.image)}
                         alt={`${cert.title} Certificate`}
                         onError={() => handleImageError(cert.id)}
                         className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
@@ -367,7 +368,7 @@ export default function Certificates() {
                 {/* Modal Image Viewer with Next/Prev Controls */}
                 <div className="relative flex-1 bg-black/40 flex items-center justify-center p-3 sm:p-6 overflow-hidden min-h-[240px] max-h-[62vh]">
                   <img
-                    src={activeCertificate.image}
+                    src={getAssetPath(activeCertificate.image)}
                     alt={activeCertificate.title}
                     className="max-h-[56vh] max-w-full object-contain rounded-lg shadow-xl"
                   />
