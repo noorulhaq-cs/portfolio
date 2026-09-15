@@ -10,6 +10,7 @@ export const profile = {
   github: "https://github.com/noorulhaq-cs",
   linkedin: "https://www.linkedin.com/in/noorulhaq-cs/",
   resumeUrl: "/resume.pdf",
+  avatar: "/dp.jpg",
 };
 
 export const navLinks = [

@@ -15,7 +15,6 @@ const floatIcons = [
 ];
 
 export default function Hero() {
-  const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
   return (
@@ -148,13 +147,10 @@ export default function Hero() {
             <div className="h-full w-full rounded-full overflow-hidden bg-surface-2 flex items-center justify-center relative">
               {!imageError ? (
                 <img
-                  src={getAssetPath("/dp.jpg")}
+                  src={getAssetPath(profile.avatar)}
                   alt={profile.name}
-                  onLoad={() => setImageLoaded(true)}
                   onError={() => setImageError(true)}
-                  className={`h-full w-full object-cover object-center transition-opacity duration-500 ${
-                    imageLoaded ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                  }`}
+                  className="h-full w-full object-cover object-center"
                 />
               ) : (
                 <div className="flex flex-col items-center justify-center text-ink-faint">
